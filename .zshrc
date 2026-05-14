@@ -31,8 +31,7 @@ setopt HIST_FIND_NO_DUPS
 
 setopt AUTOCD
 setopt NOBEEP
-setopt EXTENDED_GLOB
-setopt NUMERIC_GLOB_SORT
+setopt NUMERIC_GLOB_SORT  # sort file10 after file9, not after file1
 
 # =========================================================
 # Smart directory navigation
@@ -56,7 +55,7 @@ zstyle ':completion:*' menu select
 
 # Make completion case-insensitive
 # Example: "doc" can complete to "Documents"
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # lowercase input matches upper and lower
 
 # =========================================================
 # Fuzzy finder
@@ -110,14 +109,5 @@ source "$ZDOTDIR/prompt.zsh"
 # =========================================================
 
 export NVM_DIR="$HOME/.nvm"
-
-_nvm_load() {
-  unset -f nvm node npm npx
-  [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
-}
-
-nvm() { _nvm_load; nvm "$@" }
-node() { _nvm_load; node "$@" }
-npm()  { _nvm_load; npm "$@" }
-npx()  { _nvm_load; npx "$@" }
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
