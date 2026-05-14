@@ -14,7 +14,7 @@ alias la='eza -lah --icons --git'
 # Tree view
 alias tree='eza --tree --icons'
 
-# Reuse ls completions for eza
+# Reuse ls completions for eza (avoids defining a separate completion function)
 compdef eza=ls
 
 # Better cat (bat on Arch, batcat on Ubuntu)
@@ -42,7 +42,7 @@ alias df='df -h'
 # Navigation
 # =========================================================
 
-alias -- -='cd -'
+alias -- -='cd -'  # -- prevents - being parsed as a flag; cd - jumps to previous directory
 
 # =========================================================
 # Editor
@@ -54,5 +54,5 @@ alias vim='nvim'
 # Git
 # =========================================================
 
-alias glog='PAGER="less -F -X" git log'
+alias glog='PAGER="less -F -X" git log'                              # -F quit if one screen, -X no clear on exit
 alias gadog='PAGER="less -F -X" git log --all --decorate --oneline --graph'
