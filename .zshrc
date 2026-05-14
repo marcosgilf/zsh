@@ -7,7 +7,7 @@
 #                 zsh-history-substring-search, zsh-vi-mode
 #   Prompt:       starship
 #   Navigation:   zoxide, fzf, fd
-#   CLI tools:    eza, bat, nvim
+#   CLI tools:    eza, bat, nvim, ripgrep
 #   Node:         nvm
 
 # =========================================================
@@ -24,6 +24,15 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
+
+# =========================================================
+# Shell behaviour
+# =========================================================
+
+setopt AUTOCD
+setopt NOBEEP
+setopt EXTENDED_GLOB
+setopt NUMERIC_GLOB_SORT
 
 # =========================================================
 # Smart directory navigation

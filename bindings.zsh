@@ -16,4 +16,8 @@ zvm_after_init() {
 
   # Ctrl+\ -> toggle autosuggestions (useful for screen recordings)
   bindkey '^\' autosuggest-toggle
+
+  # Up/Down -> history search by substring
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
 }

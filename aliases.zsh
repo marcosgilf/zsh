@@ -8,6 +8,9 @@ alias ls='eza --icons'
 # Detailed listing
 alias ll='eza -lh --icons --git'
 
+# Detailed listing including hidden files
+alias la='eza -lah --icons --git'
+
 # Tree view
 alias tree='eza --tree --icons'
 
@@ -28,8 +31,28 @@ if command -v fdfind >/dev/null 2>&1; then
 fi
 
 # =========================================================
+# Core utilities
+# =========================================================
+
+alias grep='rg --color=auto'
+alias diff='diff --color=auto'
+alias df='df -h'
+
+# =========================================================
+# Navigation
+# =========================================================
+
+alias -- -='cd -'
+
+# =========================================================
 # Editor
 # =========================================================
 
-# NeoVim
 alias vim='nvim'
+
+# =========================================================
+# Git
+# =========================================================
+
+alias glog='PAGER="less -F -X" git log'
+alias gadog='PAGER="less -F -X" git log --all --decorate --oneline --graph'

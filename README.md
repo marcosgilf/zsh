@@ -7,13 +7,13 @@ Powerful but tastefully minimal zsh configuration.
 ### Arch
 
 ```sh
-paru -S zsh neovim eza bat fd fzf zoxide starship
+paru -S zsh neovim eza bat fd fzf zoxide starship ripgrep
 ```
 
 ### Ubuntu
 
 ```sh
-sudo apt install zsh neovim eza batcat fd-find fzf
+sudo apt install zsh neovim eza batcat fd-find fzf ripgrep
 # install zoxide and starship separately
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 curl -sS https://starship.rs/install.sh | sh
@@ -22,7 +22,7 @@ curl -sS https://starship.rs/install.sh | sh
 ### macOS
 
 ```sh
-brew install zsh neovim eza bat fd fzf zoxide starship
+brew install zsh neovim eza bat fd fzf zoxide starship ripgrep
 ```
 
 ## Setup
