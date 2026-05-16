@@ -13,3 +13,6 @@ local.zsh
 
 # Tutorial outline
 TUTORIAL.md
+
+# installed plugins
+./plugins/
