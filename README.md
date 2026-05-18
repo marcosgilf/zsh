@@ -38,10 +38,18 @@ git clone https://github.com/radleylewis/zsh ~/.config/zsh
 
 **2. Point zsh at the config directory**
 
-Add the following to `~/.zshenv`:
+Add the following to `/etc/zsh/zshenv`:
 
 ```sh
-export ZDOTDIR="$HOME/.config/zsh"
+if [[ -z "$XDG_CONFIG_HOME" ]]
+then
+    export XDG_CONFIG_HOME="$HOME/.config"
+fi
+
+if [[ -d "$XDG_CONFIG_HOME/zsh" ]]
+then
+    export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+fi
 ```
 
 **3. Set zsh as your default shell**
@@ -54,7 +62,7 @@ chsh -s $(which zsh)
 
 ```sh
 mkdir -p ~/.local/state/zsh   # history
-mkdir -p ~/.cache/zsh          # completion cache
+mkdir -p ~/.cache/zsh         # completion cache
 ```
 
 **5. Start a new shell**
