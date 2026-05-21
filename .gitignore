@@ -7,6 +7,7 @@ plugins/
 
 # Machine-local overrides
 local.zsh
+.zprofile
 
 # macOS metadata
 .DS_Store

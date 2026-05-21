@@ -15,8 +15,8 @@
 # =========================================================
 
 HISTFILE="$XDG_STATE_HOME/zsh/history"
-HISTSIZE=100000
-SAVEHIST=100000
+SAVEHIST=1000
+HISTSIZE=999
 
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
@@ -67,24 +67,6 @@ if [[ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]]; then
   source /opt/homebrew/opt/fzf/shell/completion.zsh
 fi
 
-# macOS / Homebrew (Intel)
-if [[ -f /usr/local/opt/fzf/shell/key-bindings.zsh ]]; then
-  source /usr/local/opt/fzf/shell/key-bindings.zsh
-  source /usr/local/opt/fzf/shell/completion.zsh
-fi
-
-# Arch
-if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
-  source /usr/share/fzf/key-bindings.zsh
-  source /usr/share/fzf/completion.zsh
-fi
-
-# Ubuntu
-if [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then
-  source /usr/share/doc/fzf/examples/key-bindings.zsh
-  source /usr/share/doc/fzf/examples/completion.zsh
-fi
-
 # =========================================================
 # Modular Config Files
 # =========================================================
@@ -95,6 +77,9 @@ source "$ZDOTDIR/fzf.zsh"
 # Aliases
 source "$ZDOTDIR/aliases.zsh"
 
+# Functions
+source "$ZDOTDIR/functions.zsh"
+
 # Custom keybindings
 source "$ZDOTDIR/bindings.zsh"
 
@@ -104,10 +89,3 @@ source "$ZDOTDIR/plugins.zsh"
 # Prompt/theme
 source "$ZDOTDIR/prompt.zsh"
 
-# =========================================================
-# Node / NVM
-# =========================================================
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
