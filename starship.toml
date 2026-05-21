@@ -1,8 +1,11 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-add_newline = false
+palette = 'marcos'
 
-format = "$directory$os$git_branch$git_status$nodejs$rust$golang$php $character"
+[palettes.marcos]
+coral = "#ff7f50"
+
+format = "$os$directory$git_branch$git_status$nodejs$rust$golang$php $character"
 
 [os]
 disabled = false
@@ -11,8 +14,8 @@ format = "[$symbol](#blue) "
 [os.symbols]
 Ubuntu = "󰕈"
 Arch   = "󰣇"
-CachyOS   = "󰣇"
-Macos  = ""
+CachyOS = "󰣇"
+Macos  = "󰀵"
 
 [directory]
 format            = "[$path](cyan) "
@@ -21,7 +24,7 @@ truncate_to_repo  = true
 
 [git_branch]
 symbol = ""
-format = "[$symbol $branch](bold purple) "
+format = "[$symbol $branch](coral) "
 
 [git_status]
 format     = "($ahead_behind$staged$modified$untracked$deleted$conflicted)"
@@ -35,22 +38,30 @@ deleted    = "[✘$count ](bold red)"
 conflicted = "[⚡$count ](bold red)"
 
 [nodejs]
-symbol = ""
+symbol = "󰎙"
 format = "[$symbol $version](green) "
+version_format = "v${major}"
 
 [rust]
-symbol = ""
+symbol = ""
 format = "[$symbol $version](red) "
+version_format = "v${major}"
 
 [golang]
-symbol = ""
+symbol = ""
 format = "[$symbol $version](cyan) "
+version_format = "v${major}"
 
 [php]
-symbol = ""
+symbol = ""
 format = "[$symbol $version](purple) "
+version_format = "v${major}"
+
+[gcloud]
+disabled = true
 
 [character]
 success_symbol = "[❯](green)"
 error_symbol   = "[❯](red)"
 vimcmd_symbol  = "[❮](blue)"
+
