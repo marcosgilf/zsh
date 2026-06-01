@@ -37,8 +37,10 @@ setopt NUMERIC_GLOB_SORT  # sort file10 after file9, not after file1
 # Smart directory navigation & lf
 # =========================================================
 
-LF_ICONS=$(cat ~/.config/lf/icons | tr '\n' ':')
-export LF_ICONS
+if [[ -f ~/.config/lf/icons ]]; then
+  LF_ICONS=$(cat ~/.config/lf/icons | tr '\n' ':')
+  export LF_ICONS
+fi
 
 # Initialize zoxide
 eval "$(zoxide init zsh)"
@@ -88,6 +90,12 @@ if [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then
   source /usr/share/doc/fzf/examples/completion.zsh
 fi
 
+# Local Git-cloned fzf
+if [[ -f "$HOME/.fzf/shell/key-bindings.zsh" ]]; then
+  source "$HOME/.fzf/shell/key-bindings.zsh"
+  source "$HOME/.fzf/shell/completion.zsh"
+fi
+
 # =========================================================
 # Modular Config Files
 # =========================================================
@@ -109,9 +117,9 @@ source "$ZDOTDIR/prompt.zsh"
 
 
 # =========================================================
-# Node / NVM
+# User Custom Configurations
 # =========================================================
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+if [[ -f "$ZDOTDIR/local.zsh" ]]; then
+  source "$ZDOTDIR/local.zsh"
+fi
