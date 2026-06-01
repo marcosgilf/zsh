@@ -86,6 +86,10 @@ To update all plugins:
 zplugin-update
 ```
 
+## Functions
+
+Custom shell functions are loaded from `$ZDOTDIR/functions/` on startup. Add each function group in its own `.zsh` file there, and `functions.zsh` will source them automatically.
+
 ## Keybindings
 
 | Key | Action |
