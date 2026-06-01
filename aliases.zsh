@@ -100,3 +100,9 @@ alias stream='mpv av://v4l2:/dev/video4 --fullscreen --demuxer-lavf-o=input_form
 # =========================================================
 
 alias b2b-tokens='npx @box/token-server@latest'
+
+# =========================================================
+# pi
+# =========================================================
+
+alias q='pi --model claude-haiku-4.5 -p'
