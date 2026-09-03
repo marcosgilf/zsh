@@ -1,9 +1,16 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-palette = 'marcos'
+palette = 'tokyo-night'
 
-[palettes.marcos]
-coral = "#ff7f50"
+[palettes.tokyo-night]
+coral = "#7aa2f7"
+blue = "#7aa2f7"
+cyan = "#449dab"
+green = "#9ece6a"
+yellow = "#e0af68"
+red = "#f7768e"
+purple = "#bb9af7"
+white = "#c0caf5"
 
 format = "$os$directory$git_branch$git_status$nodejs$rust$golang$php $character"
 
