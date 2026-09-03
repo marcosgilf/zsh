@@ -22,3 +22,9 @@ TUTORIAL.md
 # startship
 .starship.toml.swp
 
+# Private work configuration
+.zcompcache/
+functions/work.zsh
+functions/lazy-op-secrets.zsh
+functions/npm-b2b.zsh
+
